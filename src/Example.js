@@ -7,10 +7,10 @@ function Example() {
   const [many, setMany] = useState([]);
 
   const options = [
-    { name: 'dog', value: 'dog' },
-    { name: 'cat', value: 'cat' },
-    { name: 'chicken', value: 'chicken' },
-    { name: 'wolf', value: 'wolf' },
+    { id: 1, name: 'dog', value: 'dog' },
+    { id: 2, name: 'cat', value: 'cat' },
+    { id: 3, name: 'chicken', value: 'chicken' },
+    { id: 4, name: 'wolf', value: 'wolf' },
   ];
 
   const handleChange = e => {
@@ -49,7 +49,6 @@ function Example() {
         </select>
         <h1> Mutiple values you select is : {mutipleValue}</h1>
       </div>
-
       <Muti many={many} setMany={setMany} options={options} />
     </div>
   );

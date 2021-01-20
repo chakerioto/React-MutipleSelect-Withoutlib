@@ -51,9 +51,10 @@ body {
   background-color: red;
 }
 .white > button {
-  width: 10%;
-  height: 50%;
 }
 .white h1 {
   margin: 0;
+}
+.left select {
+  width: 100%;
 }
