@@ -29,13 +29,13 @@ function Example() {
   return (
     <div>
       <div className="select-div">
-        <select value={value} onChange={handleChange}>
+        {/* <select value={value} onChange={handleChange}>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
           <option value="4">4</option>
         </select>
-        <h1>Value you select is : {value}</h1>
+        <h1>Value you select is : {value}</h1> */}
         <select
           multiple={true}
           value={mutipleValue}

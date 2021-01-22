@@ -2,59 +2,37 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  background-color: cornflowerblue;
+  color: white;
 }
-.select-div {
-  width: 90%;
-  margin: auto;
-  padding: 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
+h1 {
+  color: black;
+}
+.container {
+  width: 800px;
+  margin: 100px auto;
+  box-sizing: border-box;
+}
+.select-bar {
   background-color: coral;
+  height: 81px;
+  border: 2px solid green;
+  padding-left: 24px;
+  width: 100%;
 }
-.select-div > select {
-  width: 50%;
-  height: 60px;
-}
-.muti-select {
-  height: 100px;
+.select-items {
+  width: 100%;
 }
 
-.left-right {
-  display: flex;
-  width: 100%;
-  margin: auto;
-  height: 500px;
-}
-.left {
-  width: 50%;
-  background-color: cornflowerblue;
-}
-.right {
-  width: 50%;
-  background-color: cyan;
-}
-.txt {
+.item-choice {
+  cursor: pointer;
   width: 100%;
   display: flex;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-.white {
-  padding: 0;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-  word-break: break-word;
-  background-color: red;
+  border: 1px solid #00b0b2;
+  padding-left: 24px;
+  background-color: teal;
 }
-.white > button {
-}
-.white h1 {
-  margin: 0;
-}
-.left select {
-  width: 100%;
+.item-choice:hover {
+  background-color: blue;
 }
