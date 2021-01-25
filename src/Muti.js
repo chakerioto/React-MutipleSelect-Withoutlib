@@ -2,36 +2,42 @@ import React, { useState } from 'react';
 
 function Muti() {
   const items = [
-    { id: 1, name: 'chicken' },
-    { id: 2, name: 'dog' },
-    { id: 3, name: 'cat' },
-    { id: 4, name: 'duck' },
+    { id: 1, name: 'chicken', isSelected: false },
+    { id: 2, name: 'dog', isSelected: false },
+    { id: 3, name: 'cat', isSelected: false },
+    { id: 4, name: 'duck', isSelected: false },
   ];
 
   const [isOpen, setIsOpen] = useState(true);
   const [itemSelect, setItemSelect] = useState([]);
 
   const addItem = el => {
-    // const test = itemSelect.some(item => item.id !== el.id);
-    // console.log(test);
-    // if (!test) {
-    //   setItemSelect([...itemSelect, el]);
-    // }
-    //need fixing
+    if (itemSelect.length === 0) {
+      setItemSelect([{ ...el, isSelected: true }]);
+    } else {
+      let updateList = itemSelect.map((item, index) => {
+        console.log(item.id);
+        if (item.id !== el.id) {
+          return { ...el, isSelected: true };
+        } else {
+          return item;
+        }
+      });
+      // setItemSelect([...itemSelect, updateList]);
+      setItemSelect([...itemSelect.concat(updateList)]);
+    }
   };
 
   const showAnswer = () => {
     const dropdown1 = document.getElementById('select-items');
     if (isOpen) {
-      dropdown1.style.display = 'none';
+      dropdown1.style.display = 'block';
       setIsOpen(!isOpen);
     } else {
-      dropdown1.style.display = 'block';
+      dropdown1.style.display = 'none';
       setIsOpen(!isOpen);
     }
   };
-
-  console.log(itemSelect);
 
   return (
     <div className="container">
