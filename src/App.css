@@ -15,13 +15,19 @@ h1 {
 }
 .select-bar {
   background-color: coral;
-  height: 81px;
   border: 2px solid green;
   padding-left: 24px;
   width: 100%;
+  height: 101px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 .select-items {
   width: 100%;
+  display: none;
 }
 
 .item-choice {
@@ -35,4 +41,15 @@ h1 {
 }
 .item-choice:hover {
   background-color: blue;
+}
+
+.item-add {
+  border: 1px solid darkseagreen;
+  padding: 10px;
+  font-size: 22px;
+  font-weight: bold;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  background-color: darkslateblue;
 }
