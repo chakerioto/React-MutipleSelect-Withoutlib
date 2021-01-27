@@ -1,9 +1,9 @@
 import './App.css';
-import Muti from './Muti';
+import Drag from './Drag';
 function App() {
   return (
     <div className="App">
-      <Muti />
+      <Drag />
     </div>
   );
 }
