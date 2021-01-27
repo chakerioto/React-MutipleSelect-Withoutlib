@@ -14,21 +14,17 @@ function Muti() {
   const addItem = el => {
     if (itemSelect.length === 0) {
       setItemSelect([{ ...el, isSelected: true }]);
-    }
-    else {
+    } else {
       itemSelect.map(item => {
         if (item.id === el.id) {
-          console.log(itemSelect)
-          setItemSelect(itemSelect.filter(i => i.id !== el.id))
+          console.log(itemSelect);
+          setItemSelect(itemSelect.filter(i => i.id !== el.id));
+        } else {
+          setItemSelect(...itemSelect, { ...el, isSelected: true });
         }
-        else {
-          setItemSelect(...itemSelect, { ...el, isSelected: true })
-        }
-
-      })
+      });
     }
-
-  }
+  };
 
   const showAnswer = () => {
     const dropdown1 = document.getElementById('select-items');
@@ -41,12 +37,12 @@ function Muti() {
     }
   };
 
-  console.log(itemSelect)
+  console.log(itemSelect);
   return (
     <div className="container">
       <h1>Select a pet :</h1>
       <div className="select-bar" onClick={() => showAnswer()}>
-        {itemSelect !== [] && itemSelect.map(item => {
+        {itemSelect.map(item => {
           return (
             <div className="item-add" key={item.id}>
               <p>{item.name}</p>
