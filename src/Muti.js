@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { AiFillCloseCircle, AiOutlineCaretDown } from 'react-icons/ai';
 
 function Muti() {
   const items = [
@@ -12,18 +13,18 @@ function Muti() {
   const [itemSelect, setItemSelect] = useState([]);
 
   const addItem = el => {
-    if (itemSelect.length === 0) {
-      setItemSelect([{ ...el, isSelected: true }]);
+    const found = itemSelect.find(element => element.id === el.id);
+    if (found === undefined) {
+      setItemSelect([...itemSelect, { ...el, isSelected: true }]);
     } else {
-      itemSelect.map(item => {
-        if (item.id === el.id) {
-          console.log(itemSelect);
-          setItemSelect(itemSelect.filter(i => i.id !== el.id));
-        } else {
-          setItemSelect(...itemSelect, { ...el, isSelected: true });
-        }
-      });
+      const filter = itemSelect.filter(ele => ele.id !== el.id);
+      setItemSelect(filter);
     }
+  };
+  const removeItem = item => {
+    const removed = itemSelect.filter(ele => ele.id !== item.id);
+
+    setItemSelect(removed);
   };
 
   const showAnswer = () => {
@@ -32,20 +33,26 @@ function Muti() {
       dropdown1.style.display = 'block';
       setIsOpen(!isOpen);
     } else {
-      dropdown1.style.display = 'none';
-      setIsOpen(!isOpen);
+      if (itemSelect.length === 0) {
+        console.log(itemSelect);
+        dropdown1.style.display = 'none';
+        setIsOpen(!isOpen);
+      }
     }
   };
 
-  console.log(itemSelect);
   return (
     <div className="container">
       <h1>Select a pet :</h1>
       <div className="select-bar" onClick={() => showAnswer()}>
+        <AiOutlineCaretDown size="2em" className="react-icon" />
         {itemSelect.map(item => {
           return (
             <div className="item-add" key={item.id}>
               <p>{item.name}</p>
+              <button onClick={() => removeItem(item)}>
+                <AiFillCloseCircle />
+              </button>
             </div>
           );
         })}

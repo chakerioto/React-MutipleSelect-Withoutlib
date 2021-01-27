@@ -23,6 +23,7 @@ h1 {
   align-items: center;
   flex-wrap: wrap;
   gap: 30px;
+  position: relative;
 }
 .select-items {
   width: 100%;
@@ -51,4 +52,10 @@ h1 {
   display: flex;
   align-items: center;
   background-color: darkslateblue;
+  gap: 10px;
+}
+.react-icon {
+  position: absolute;
+  right: 25px;
+  top: 40px;
 }
